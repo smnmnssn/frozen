@@ -1,15 +1,15 @@
-const player1 = 1;
-const player2 = 2;
-const transporter = 3;
-const platform = 4;
-const trampoline = 5;
-const snowman = 6;
-const timerPlayer1 = 8;
-const timerPlayer2 = 9;
-const frameX = 144;
-const frameY = 102.4;
+const player1: number = 1;
+const player2: number = 2;
+const transporter: number = 3;
+const platform: number = 4;
+const trampoline: number = 5;
+const snowman: number = 6;
+const timerPlayer1: number = 8;
+const timerPlayer2: number = 9;
+const frameX: number = 144;
+const frameY: number = 102.4;
 
-const level1: Array[Array[number]] = [
+const level1: number[][] = [
   [8, 0, 0, 0, 0, 0, 0, 0, 0, 9],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [3, 0, 0, 0, 0, 9, 6, 0, 3, 0],
