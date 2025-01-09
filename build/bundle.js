@@ -61,9 +61,9 @@ const level1 = [
     [0, 4, 4, 0, 0, 0, 4, 4, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 5, 0],
 ];
-for (let x = 0; x <= level1.length(); x++) {
-    for (let y = 0; x <= 8; y++) {
-        let value = y;
+for (let y = 0; y <= level1.length; y++) {
+    for (let x = 0; x < level1[y].length; y++) {
+        let value = level1[y][x];
         if (value === 1) {
             const player1 = new Player();
         }
