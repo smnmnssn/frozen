@@ -41,16 +41,6 @@ class Game {
         pop();
     }
 }
-const player1 = 1;
-const player2 = 2;
-const transporter = 3;
-const platform = 4;
-const trampoline = 5;
-const snowman = 6;
-const timerPlayer1 = 8;
-const timerPlayer2 = 9;
-const frameX = 144;
-const frameY = 102.4;
 const level1 = [
     [8, 0, 0, 0, 0, 0, 0, 0, 0, 9],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -61,32 +51,33 @@ const level1 = [
     [0, 4, 4, 0, 0, 0, 4, 4, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 5, 0],
 ];
+const gameObjects = [];
 for (let y = 0; y <= level1.length; y++) {
     for (let x = 0; x < level1[y].length; y++) {
         let value = level1[y][x];
         if (value === 1) {
-            const player1 = new Player();
+            gameObjects.push(new Player("yellow", x, y));
         }
         if (value === 2) {
-            const player2 = new Player();
+            gameObjects.push(new Player("green", x, y));
         }
         if (value === 3) {
-            const transporter = new Transporter();
+            gameObjects.push(new Transporter());
         }
         if (value === 4) {
-            const platform = new Platform();
+            gameObjects.push(new Platform());
         }
         if (value === 5) {
-            const trampoline = new Trampoline();
+            gameObjects.push(new Trampoline());
         }
         if (value === 6) {
-            const snowman = new Snowman();
+            gameObjects.push(new Snowman());
         }
         if (value === 8) {
-            const timerPlayer1 = new Timer();
+            gameObjects.push(new Timer("yellow"));
         }
         if (value === 9) {
-            const timerPlayer2 = new Timer();
+            gameObjects.push(new Timer("green"));
         }
     }
 }
