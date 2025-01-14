@@ -1,4 +1,4 @@
-class gameObject {
+class GameObject {
   width: number;
   height: number;
   img: string;
@@ -9,8 +9,8 @@ class gameObject {
     width: number,
     height: number,
     img: string,
-    position: p5.Vector,
-    isSolid: boolean
+    isSolid: boolean,
+    position: p5.Vector
   ) {
     this.width = width;
     this.height = height;
@@ -19,7 +19,10 @@ class gameObject {
     this.position = position;
   }
 
-  public draw() {}
+  public draw(): void {
+    const asset = loadImage(this.img);
+    image(asset, this.position.x, this.position.y, this.width, this.height);
+  }
 
   public update() {}
 }

@@ -11,6 +11,7 @@
 
 class LevelFactory {
   size: p5.Vector;
+  gameObjects = [];
   constructor(size: p5.Vector) {}
 
   private getGameObjects() {
@@ -28,28 +29,28 @@ class LevelFactory {
       for (let x = 0; x < level1[y].length; y++) {
         let value = level1[y][x];
         if (value === 1) {
-          gameObjects.push(new Player("yellow", x, y));
+          //gameObjects.push(new Player("yellow", x, y));
         }
         if (value === 2) {
-          gameObjects.push(new Player("green", x, y));
+          //gameObjects.push(new Player("green", x, y));
         }
         if (value === 3) {
-          gameObjects.push(new Transporter());
+          gameObjects.push(new Teleport(createVector(0, 0)));
         }
         if (value === 4) {
-          gameObjects.push(new Platform());
+          gameObjects.push(new Platform(createVector(0, 0)));
         }
         if (value === 5) {
-          gameObjects.push(new Trampoline());
+          gameObjects.push(new Trampoline(createVector(0, 0)));
         }
         if (value === 6) {
-          gameObjects.push(new Snowman());
+          gameObjects.push(new Snowman(createVector(0, 0)));
         }
         if (value === 8) {
-          gameObjects.push(new Timer("yellow"));
+          //gameObjects.push(new Timer("yellow"));
         }
         if (value === 9) {
-          gameObjects.push(new Timer("green"));
+          //gameObjects.push(new Timer("green"));
         }
       }
     }
