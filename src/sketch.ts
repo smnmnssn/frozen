@@ -61,7 +61,7 @@ function setup() {
   frameRate(60);
   music.mystery.setVolume(0.8);
 
-  game = new Game();
+  game = new Game((start = new StartScreen()));
 }
 
 /**

@@ -1,9 +1,7 @@
-class GameBoard {
-  private gameObjects: GameObjects[];
+class GameBoard implements Screen {
+  gameObjects: GameObjects[];
 
-  constructor() {
-    this;
-  }
+  constructor() {}
 
   private checkCollisions() {}
 

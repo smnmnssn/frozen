@@ -10,8 +10,7 @@
 // const frameY: number = 102.4;
 
 class LevelFactory {
-  private size: p5.Vector;
-
+  size: p5.Vector;
   constructor(size: p5.Vector) {}
 
   private getGameObjects() {
@@ -56,7 +55,9 @@ class LevelFactory {
     }
   }
 
-  public draw() {}
+  public draw() {
+    this.getGameObjects();
+  }
 
   public update() {}
 }

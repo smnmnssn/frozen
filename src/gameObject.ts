@@ -1,9 +1,9 @@
 class gameObject {
-  private width: number;
-  private height: number;
-  private img: string;
-  private isSolid: boolean;
-  private position: p5.Vector;
+  width: number;
+  height: number;
+  img: string;
+  isSolid: boolean;
+  position: p5.Vector;
 
   constructor(
     width: number,
