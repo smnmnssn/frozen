@@ -154,7 +154,7 @@ let kavoonFont;
 function preload() {
     cloudImg = loadImage("assets/images/cloud.svg");
     snowflakeImg = loadImage("assets/images/snowflake.svg");
-    platformImg = loadImage("assets/images/platform.svg");
+    platformImg = loadImage("assets/images/platformStart.svg");
     kavoonFont = loadFont("assets/Font(s)/Kavoon-Regular.ttf");
     player1Img = loadImage("assets/images/greenPlayerRight.svg");
     player2Img = loadImage("assets/images/yellowPlayerLeft.svg");

@@ -40,11 +40,11 @@ class StartScreen {
     }
     drawSnowflakes() {
         for (let pos of this.snowflakePositions) {
-            image(snowflakeImg, pos.x, pos.y, 20, 20);
+            image(snowflakeImg, pos.x, pos.y, 30, 30);
         }
     }
     drawPlatform() {
-        image(platformImg, this.platformPosition.x, this.platformPosition.y, 700, 90);
+        image(platformImg, this.platformPosition.x, this.platformPosition.y, 550, 50);
     }
     drawPlayer1() {
         image(player1Img, this.player1Position.x, this.player1Position.y);
@@ -57,7 +57,7 @@ let startScreen;
 function preload() {
     cloudImg = loadImage("assets/images/cloud.svg");
     snowflakeImg = loadImage("assets/images/snowflake.svg");
-    platformImg = loadImage("assets/images/platform.svg");
+    platformImg = loadImage("assets/images/platformStart.svg");
     kavoonFont = loadFont("assets/Font(s)/Kavoon-Regular.ttf");
     player1Img = loadImage("assets/images/greenPlayerRight.svg");
     player2Img = loadImage("assets/images/yellowPlayerLeft.svg");
