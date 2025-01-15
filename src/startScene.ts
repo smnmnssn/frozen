@@ -4,7 +4,7 @@ let platformImg: p5.Image;
 let player1Img: p5.Image;
 let player2Img: p5.Image;
 
-class StartScreen extends Screen {
+class StartScene implements Scene {
   private titlePosition: p5.Vector;
   private textPosition: p5.Vector;
   private cloudPosition: p5.Vector;
@@ -14,7 +14,6 @@ class StartScreen extends Screen {
   private player2Position: p5.Vector;
 
   constructor() {
-    super();
     this.titlePosition = createVector(400, 100); // Titelns position
     this.textPosition = createVector(400, 150); // Textens position
     this.cloudPosition = createVector(200, 100); // Molnets position
@@ -22,6 +21,9 @@ class StartScreen extends Screen {
     this.platformPosition = createVector(0, 550); // Plattformens position
     this.player1Position = createVector(55, 550);
     this.player2Position = createVector(400, 550);
+  }
+  update(): void {
+    throw new Error("Method not implemented.");
   }
 
   draw() {
@@ -87,11 +89,11 @@ class StartScreen extends Screen {
   }
 }
 
-let startScreen: StartScreen;
+let startScene: StartScene;
 
 let kavoonFont: p5.Font;
 
-function preload() {
+/*  function preload() {
   // Ladda SVG-filer som p5.Image
   cloudImg = loadImage("assets/images/cloud.svg");
   snowflakeImg = loadImage("assets/images/snowflake.svg");
@@ -99,15 +101,15 @@ function preload() {
   kavoonFont = loadFont("assets/Font(s)/Kavoon-Regular.ttf");
   player1Img = loadImage("assets/images/greenPlayerRight.svg");
   player2Img = loadImage("assets/images/yellowPlayerLeft.svg");
-}
+} */
 
-function setup() {
+/* function setup() {
   createCanvas(windowWidth, windowHeight);
-  startScreen = new StartScreen();
+  startScene = new StartScene();
   textFont(kavoonFont);
-}
+} */
 
-function draw() {
+/* function draw() {
   background(135, 206, 250); // Blå bakgrund
-  startScreen.draw();
-}
+  startScene.draw();
+} */
