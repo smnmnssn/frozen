@@ -1,3 +1,4 @@
+/// <reference path="playerInstruction.ts" />
 let cloudImg: p5.Image;
 let snowflakeImg: p5.Image;
 let platformImg: p5.Image;
@@ -22,7 +23,12 @@ class StartScene implements Scene {
     this.player1Position = createVector(55, 550);
     this.player2Position = createVector(400, 550);
   }
-  update(): void {}
+  update(): void {
+    if (key) {
+      let nextPage = new PlayerInstruction();
+      game.changeActiveScreen(nextPage);
+    }
+  }
 
   draw() {
     // Kallar på draw funktionerna
@@ -91,6 +97,9 @@ let startScene: StartScene;
 
 let kavoonFont: p5.Font;
 
+function changeActiveScreen(playerInstruction: any) {
+  throw new Error("Function not implemented.");
+}
 /*  function preload() {
   // Ladda SVG-filer som p5.Image
   cloudImg = loadImage("assets/images/cloud.svg");

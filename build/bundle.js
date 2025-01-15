@@ -1,4 +1,10 @@
 "use strict";
+class PlayerInstruction {
+    draw() {
+        background("red");
+    }
+    update() { }
+}
 let cloudImg;
 let snowflakeImg;
 let platformImg;
@@ -14,7 +20,12 @@ class StartScene {
         this.player1Position = createVector(55, 550);
         this.player2Position = createVector(400, 550);
     }
-    update() { }
+    update() {
+        if (key) {
+            let nextPage = new PlayerInstruction();
+            game.changeActiveScreen(nextPage);
+        }
+    }
     draw() {
         this.drawTitle();
         this.drawText();
@@ -60,6 +71,9 @@ class StartScene {
 }
 let startScene;
 let kavoonFont;
+function changeActiveScreen(playerInstruction) {
+    throw new Error("Function not implemented.");
+}
 let game;
 let music;
 class Game {
