@@ -99,9 +99,8 @@ let snowflakeImg;
 let platformImg;
 let player1Img;
 let player2Img;
-class StartScreen extends Screen {
+class StartScreen {
     constructor() {
-        super();
         this.titlePosition = createVector(400, 100);
         this.textPosition = createVector(400, 150);
         this.cloudPosition = createVector(200, 100);

@@ -110,6 +110,4 @@ function setup() {
 function draw() {
   background(135, 206, 250); // Blå bakgrund
   startScreen.draw();
-
-  // Uppdatera snöflingornas positioner för animation
 }

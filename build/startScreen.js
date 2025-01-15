@@ -14,13 +14,14 @@ class StartScreen {
         this.player2Position = createVector(500, 680);
     }
     draw() {
+        this.drawSnowflakes();
         this.drawTitle();
         this.drawText();
         this.drawCloud();
-        this.drawSnowflakes();
         this.drawPlatform();
         this.drawPlayer1();
         this.drawPlayer2();
+        
     }
     drawTitle() {
         fill("white");
@@ -38,6 +39,9 @@ class StartScreen {
         image(cloudImg, this.cloudPosition.x, this.cloudPosition.y, 500, 260);
 
     }
+    drawPlatform() {
+        image(platformImg, this.platformPosition.x, this.platformPosition.y, 550, 50);
+    }
     drawSnowflakes() {
         for (let pos of this.snowflakePositions) {
             image(snowflakeImg, pos.x, pos.y, 40, 40); // Rita snöflingor
@@ -46,9 +50,7 @@ class StartScreen {
         }
         
     }
-    drawPlatform() {
-        image(platformImg, this.platformPosition.x, this.platformPosition.y, 550, 50);
-    }
+    
     drawPlayer1() {
         image(player1Img, this.player1Position.x, this.player1Position.y);
     }
