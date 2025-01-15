@@ -71,9 +71,6 @@ class StartScene {
 }
 let startScene;
 let kavoonFont;
-function changeActiveScreen(playerInstruction) {
-    throw new Error("Function not implemented.");
-}
 let game;
 let music;
 class Game {

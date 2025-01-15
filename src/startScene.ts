@@ -96,27 +96,3 @@ class StartScene implements Scene {
 let startScene: StartScene;
 
 let kavoonFont: p5.Font;
-
-function changeActiveScreen(playerInstruction: any) {
-  throw new Error("Function not implemented.");
-}
-/*  function preload() {
-  // Ladda SVG-filer som p5.Image
-  cloudImg = loadImage("assets/images/cloud.svg");
-  snowflakeImg = loadImage("assets/images/snowflake.svg");
-  platformImg = loadImage("assets/images/platformStart.svg");
-  kavoonFont = loadFont("assets/Font(s)/Kavoon-Regular.ttf");
-  player1Img = loadImage("assets/images/greenPlayerRight.svg");
-  player2Img = loadImage("assets/images/yellowPlayerLeft.svg");
-} */
-
-/* function setup() {
-  createCanvas(windowWidth, windowHeight);
-  startScene = new StartScene();
-  textFont(kavoonFont);
-} */
-
-/* function draw() {
-  background(135, 206, 250); // Blå bakgrund
-  startScene.draw();
-} */
