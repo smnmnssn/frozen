@@ -40,8 +40,11 @@ class StartScreen {
     }
     drawSnowflakes() {
         for (let pos of this.snowflakePositions) {
-            image(snowflakeImg, pos.x, pos.y, 30, 30);
+            image(snowflakeImg, pos.x, pos.y, 40, 40); // Rita snöflingor
+            pos.y += 1; // Fallande rörelse
+            if (pos.y > height) pos.y = 0; // Starta om om utanför canvas
         }
+        
     }
     drawPlatform() {
         image(platformImg, this.platformPosition.x, this.platformPosition.y, 550, 50);
@@ -75,9 +78,5 @@ function setup() {
 function draw() {
     background(135, 206, 250);
     startScreen.draw();
-    for (let pos of startScreen.snowflakePositions) {
-        pos.y += 1;
-        if (pos.y > height)
-            pos.y = 0;
-    }
+   
 }

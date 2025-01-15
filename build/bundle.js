@@ -99,8 +99,9 @@ let snowflakeImg;
 let platformImg;
 let player1Img;
 let player2Img;
-class StartScreen {
+class StartScreen extends Screen {
     constructor() {
+        super();
         this.titlePosition = createVector(400, 100);
         this.textPosition = createVector(400, 150);
         this.cloudPosition = createVector(200, 100);
@@ -137,6 +138,9 @@ class StartScreen {
     drawSnowflakes() {
         for (let pos of this.snowflakePositions) {
             image(snowflakeImg, pos.x, pos.y, 20, 20);
+            pos.y += 1;
+            if (pos.y > height)
+                pos.y = 0;
         }
     }
     drawPlatform() {
@@ -167,10 +171,5 @@ function setup() {
 function draw() {
     background(135, 206, 250);
     startScreen.draw();
-    for (let pos of startScreen.snowflakePositions) {
-        pos.y += 1;
-        if (pos.y > height)
-            pos.y = 0;
-    }
 }
 //# sourceMappingURL=bundle.js.map

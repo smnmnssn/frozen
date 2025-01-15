@@ -4,16 +4,17 @@ let platformImg: p5.Image;
 let player1Img: p5.Image;
 let player2Img: p5.Image;
 
-class StartScreen {
+class StartScreen extends Screen {
   private titlePosition: p5.Vector;
   private textPosition: p5.Vector;
   private cloudPosition: p5.Vector;
-  public snowflakePositions: p5.Vector[];
+  private snowflakePositions: p5.Vector[];
   private platformPosition: p5.Vector;
   private player1Position: p5.Vector;
   private player2Position: p5.Vector;
 
   constructor() {
+    super();
     this.titlePosition = createVector(400, 100); // Titelns position
     this.textPosition = createVector(400, 150); // Textens position
     this.cloudPosition = createVector(200, 100); // Molnets position
@@ -24,19 +25,15 @@ class StartScreen {
   }
 
   draw() {
-    // Rita titel
+    // Kallar på draw funktionerna
     this.drawTitle();
 
-    // Rita text
     this.drawText();
 
-    // Rita moln
     this.drawCloud();
 
-    // Rita snöflingor
     this.drawSnowflakes();
 
-    // Rita plattform
     this.drawPlatform();
 
     this.drawPlayer1();
@@ -53,7 +50,7 @@ class StartScreen {
   }
 
   private drawText() {
-    fill("white"); // Svart färg
+    fill("white"); // Vit färg
     textSize(20);
     textAlign(CENTER, CENTER);
     text("Press any key to continue", this.textPosition.x, this.textPosition.y);
@@ -66,6 +63,8 @@ class StartScreen {
   private drawSnowflakes() {
     for (let pos of this.snowflakePositions) {
       image(snowflakeImg, pos.x, pos.y, 20, 20); // Rita snöflingor
+      pos.y += 1; // Fallande rörelse
+      if (pos.y > height) pos.y = 0; // Starta om om utanför canvas
     }
   }
 
@@ -94,7 +93,7 @@ let kavoonFont: p5.Font;
 
 function preload() {
   // Ladda SVG-filer som p5.Image
-  cloudImg = loadImage("assets/images/cloud.svg"); // Ange rätt sökväg
+  cloudImg = loadImage("assets/images/cloud.svg");
   snowflakeImg = loadImage("assets/images/snowflake.svg");
   platformImg = loadImage("assets/images/platformStart.svg");
   kavoonFont = loadFont("assets/Font(s)/Kavoon-Regular.ttf");
@@ -103,7 +102,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight); // Skapa canvas
+  createCanvas(windowWidth, windowHeight);
   startScreen = new StartScreen();
   textFont(kavoonFont);
 }
@@ -113,8 +112,4 @@ function draw() {
   startScreen.draw();
 
   // Uppdatera snöflingornas positioner för animation
-  for (let pos of startScreen.snowflakePositions) {
-    pos.y += 1; // Fallande rörelse
-    if (pos.y > height) pos.y = 0; // Om snöflingan faller utanför canvas, starta om
-  }
 }
