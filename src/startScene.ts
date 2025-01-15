@@ -14,17 +14,15 @@ class StartScene implements Scene {
   private player2Position: p5.Vector;
 
   constructor() {
-    this.titlePosition = createVector(400, 100); // Titelns position
+    this.titlePosition = createVector(800, 600); // Titelns position
     this.textPosition = createVector(400, 150); // Textens position
     this.cloudPosition = createVector(200, 100); // Molnets position
     this.snowflakePositions = []; // Lista för snöflingornas positioner
-    this.platformPosition = createVector(0, 550); // Plattformens position
+    this.platformPosition = createVector(50, 600); // Plattformens position
     this.player1Position = createVector(55, 550);
     this.player2Position = createVector(400, 550);
   }
-  update(): void {
-    throw new Error("Method not implemented.");
-  }
+  update(): void {}
 
   draw() {
     // Kallar på draw funktionerna
@@ -44,7 +42,7 @@ class StartScene implements Scene {
   }
 
   private drawTitle() {
-    fill(0);
+    fill("white");
     textSize(20);
     textAlign(CENTER, CENTER);
     text("Tag or DIE!", this.titlePosition.x, this.titlePosition.y);

@@ -15,22 +15,22 @@ class Game {
     this.activeScene = scene; // switch to new screen
   }
 
-  updateCurrentScreen(): void {
+  public update() {
     this.activeScene.update();
-    this.activeScene.draw();
   }
 
-  public update() {}
-
-  public draw() {}
+  public draw() {
+    this.activeScene.draw();
+  }
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
 
-  game = new Game(startScene);
   startScene = new StartScene();
+  game = new Game(startScene);
+
   textFont(kavoonFont);
 }
 
@@ -47,8 +47,8 @@ function preload() {
 }
 
 function draw() {
+  background(135, 206, 250); // Blå bakgrund
   game.update();
   game.draw();
-  background(135, 206, 250); // Blå bakgrund
   /*  StartScene.draw(); */
 }
